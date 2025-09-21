@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mfatfm"
+version = "0.1.0"
+description = "In-app two-pane SFTP file manager window for libadwaita applications."
+readme = "README.md"
+authors = [
+    { name = "sshPilot Contributors" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "paramiko",
+    "PyGObject",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
