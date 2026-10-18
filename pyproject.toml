@@ -13,7 +13,7 @@ authors = [
 ]
 requires-python = ">=3.10"
 dependencies = [
-    "mfatsftp>=0.2",
+    "mfatsftp>=0.3",
     "PyGObject>=3.42",
 ]
 classifiers = [
