@@ -4,20 +4,37 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mfatfm"
-version = "0.1.0"
-description = "In-app two-pane SFTP file manager window for libadwaita applications."
+version = "0.2.0"
+description = "A two-pane file manager for GNOME that can also browse SFTP servers."
 readme = "README.md"
+license = { text = "GPL-3.0-or-later" }
 authors = [
-    { name = "sshPilot Contributors" }
+    { name = "Mehdi" }
 ]
 requires-python = ">=3.10"
 dependencies = [
-    "paramiko",
-    "PyGObject",
+    "mfatsftp>=0.2",
+    "PyGObject>=3.42",
 ]
+classifiers = [
+    "Environment :: X11 Applications :: GTK",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: System :: Filesystems",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+mfatfm = "mfatfm.app:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
